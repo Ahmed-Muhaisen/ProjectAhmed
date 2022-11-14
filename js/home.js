@@ -47,9 +47,6 @@ slider_container.style.left='-45%';
    
    
    } 
-       if(window.innerHeight<1000){
-         mobil();
-       }
     i++;                    
     if (i <(slideimge.length)) {           
         slidere();           
@@ -59,6 +56,15 @@ slider_container.style.left='-45%';
 
 slidere();                   
 
+function relode() {
+  setTimeout(function() { 
+      if(window.innerHeight<1000){
+         mobil();
+        relode();
+      }                        
+  }, 1000)
+}
+relode();
 
 
 function mobil() {
