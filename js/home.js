@@ -18,6 +18,7 @@ let footer_container=document.querySelector('.footer-container');
 let lesiner =0;
 var i = 0;                
 
+slideimge[1].style.width='35%'
 slider_container.style.width=(slideimge.length*66) +"%"
 
 function slidere() {    
@@ -47,9 +48,6 @@ slider_container.style.left='-45%';
    
    
    } 
-       if(window.innerHeight<1000){
-         mobil();
-       }
     i++;                    
     if (i <(slideimge.length)) {           
         slidere();           
@@ -60,6 +58,16 @@ slider_container.style.left='-45%';
 slidere();                   
 
 
+function relode() {
+  
+   setTimeout(function() {        
+      if(window.innerHeight<1000){
+         mobil();
+         relode();
+      }                        
+  }, 1000)
+}
+relode();
 
 function mobil() {
 if (lesiner==1 &&window.innerWidth>1000) {
