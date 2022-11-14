@@ -18,6 +18,7 @@ let footer_container=document.querySelector('.footer-container');
 let lesiner =0;
 var i = 0;                
 
+slideimge[1].style.width='35%'
 slider_container.style.width=(slideimge.length*66) +"%"
 
 function slidere() {    
